@@ -19,7 +19,6 @@ Networking
     * DHCP
     * VLANs
 
-
 ## Platform
 
 ### Proxmox Hypervisor running Ubuntu server VMs to build a kubeadm cluster with ceph storage.
@@ -69,6 +68,8 @@ Observability
 ## Hosted services
 
 * NextCloud
+    * MySQL
+    * Nginx Webserver
 * Home Assistant
 * Bitwarden
 
