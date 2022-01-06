@@ -1,4 +1,4 @@
-## Techno Tim Linux hardening and setup
+## Techno Tim Linux setup and security hardening of Ubuntu VM
 
 ### Install and Update
 1. Install ubuntu server

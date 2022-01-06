@@ -11,10 +11,11 @@ Networking
 
 * 24 port 1Gb Unifi switch
 * 8 port 10Gb Unifi switch
+* 2x Unifi APs
 * Unifi Dream Machine Pro router
     * IPS
     * DDNS
-    * VPN server
+    * VPN RADIUS server
     * unifi controller
     * DHCP
     * VLANs
