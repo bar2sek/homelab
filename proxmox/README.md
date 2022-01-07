@@ -7,6 +7,22 @@
 * Load Balancer
 * Pihole for DNS
 
-### Backup Stradegy
+### Backup strategy
 
 * Proxmox backup server VM on Windows Hyper-V
+
+### Node Plan
+
+#### Edge machines
+* kubernetes worker VMs
+
+#### Main machine
+* master node
+* additional worker nodes
+* ClusterAPI nodes
+
+#### AMD gaming PC
+* native Windows and gaming environment
+* Hyper-V VM for secondary master node
+* Hyper-V VM for secondary ClusterAPI node
+* Proxmox backup server
