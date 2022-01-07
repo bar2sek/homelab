@@ -32,3 +32,7 @@ vpn.bar2sek.net
 
 LAN
 192.168.1.0/24
+
+## Diagram for physical network
+
+## Diagram for logical network
