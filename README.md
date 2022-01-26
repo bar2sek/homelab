@@ -34,6 +34,7 @@ Ceph distributed storage
 
 Hardened k8s OS
 * [Talos Linux](https://www.talos.dev)
+* [Proxmox Doc](https://www.talos.dev/docs/v0.14/virtualized-platforms/proxmox/#installation)
 
 Reverse Proxy, LB, Ingress, API gateway
 * [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/)
