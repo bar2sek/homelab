@@ -32,6 +32,9 @@ Ceph distributed storage
 * [rbd](https://kubernetes.io/docs/concepts/storage/volumes/#rbd)
 * [Rook](https://rook.io/)
 
+Hardened k8s OS
+* [Talos Linux](https://www.talos.dev)
+
 Reverse Proxy, LB, Ingress, API gateway
 * [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/)
 
