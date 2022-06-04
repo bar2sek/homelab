@@ -21,6 +21,8 @@ Mac mini the control plane node
 - deployed using MAAS + cloud-init
 - install/configure Ceph
 - install all keys and setup for clustering
-- install virtIO for Sidero/Talos VMs?
+- install qemu for Sidero/Talos VMs?
 
 Other option is to skip Ubuntu and go straight to Sidero? How to do storage then?
+
+Instead of worrying about a Hypervisor APIs with Pulumi or suome such, use Ansible to configure VMs from CI/CD if needed?
