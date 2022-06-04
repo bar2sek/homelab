@@ -12,17 +12,17 @@ Can always use TAP on top of my k8s if desired.
 
 Mac mini the control plane node
 - external LB
-- Cluster API host for Sidero/Tanzu?
-- MAAS host for re-imaging hardware nodes
+- Cluster API host for Sidero?
 - CI/CD host for running automation to cluster
 - double duty for ARM worker node and AirPlay host for basement speakers
 
-3 nodes in cluster are Ubuntu servers
-- deployed using MAAS + cloud-init
-- install/configure Ceph
+3 nodes in cluster are Sidero servers
+- deployed with CAPI
+- install/configure Ceph using [Rook](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/)
 - install all keys and setup for clustering
-- install qemu for Sidero/Talos VMs?
 
-Other option is to skip Ubuntu and go straight to Sidero? How to do storage then?
+No Anisble or Pulumi for HW or VM configuration. Everything is done using CAPI and k8s.
 
-Instead of worrying about a Hypervisor APIs with Pulumi or suome such, use Ansible to configure VMs from CI/CD if needed?
+All gitOps based with CI/CD to deploy HW and software. Ceph storage and all k8s clusters on bare metal with PXE boot.
+
+Interact with machines using only APIs, probably with Python scripts I write for whatever in the CI.
