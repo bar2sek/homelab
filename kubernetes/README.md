@@ -1,14 +1,8 @@
 ## Setup and overall plan for kubernetes clusters
 
-* k3os with Rancher?
-* TalOS with kubeadm?
+* Sidero and Talos for full kubernetes infrastructure
 
-cloud-init Master and Worker VMs for use in Proxmox on all 3 servers? Use Ceph for storage across them and another smaller machine for independant things like LB? Use PC for backup machine and not in Ceph cluster.
-
-I don't need a BOSH like lifecycle manager for the VMs, there will only be a few that I can monitor. They run k8s and the work that does is what's important. I can set alerts for the VMs themselves. Automate it with pulumi or Terraform so a poor man's bosh to recover the VMs should be fine.
-
-Therefore no need for vSphere or VMW products of any kind.
-Can always use TAP on top of my k8s if desired.
+No traditional Hypervisor or normal OS. k8s from control plane down.
 
 Mac mini the control plane node
 - external LB
@@ -21,7 +15,7 @@ Mac mini the control plane node
 - install/configure Ceph using [Rook](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/)
 - install all keys and setup for clustering
 
-No Anisble or Pulumi for HW or VM configuration. Everything is done using CAPI and k8s.
+No Anisble or Pulumi for HW or VM configuration. Everything is done using CAPI and k8s using YAML configs in Git.
 
 All gitOps based with CI/CD to deploy HW and software. Ceph storage and all k8s clusters on bare metal with PXE boot.
 
