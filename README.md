@@ -22,7 +22,27 @@ Networking
 
 ## Platform
 
-### Proxmox Hypervisor running Ubuntu server VMs to build a kubeadm cluster with ceph storage.
+## Setup and overall plan for kubernetes clusters
+
+* Sidero and Talos for full kubernetes infrastructure
+
+No traditional Hypervisor or normal OS. k8s from control plane down.
+
+Control plane node
+- external LB
+- Cluster API host for Sidero
+- CI/CD host for running automation to cluster
+
+3 nodes in cluster are Sidero servers
+- deployed with CAPI
+- install/configure Ceph using [Rook](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/)
+- install all keys and setup for clustering
+
+No Anisble or Pulumi for HW or VM configuration. Everything is done using CAPI and k8s using YAML configs in Git.
+
+All gitOps based with CI/CD to deploy HW and software. Ceph storage and all k8s clusters on bare metal with PXE boot.
+
+Interact with machines using only APIs, probably with Python scripts I write for whatever in the CI.
 
 Getting Started:
 * [Kubernetes Production Environment](https://kubernetes.io/docs/setup/production-environment/)
@@ -95,13 +115,6 @@ Backups
     * Nginx Webserver
 * Home Assistant
 * Bitwarden
-
-
-## Future Enhancement with cloud-init VMs
-
-1. Get basic cloud-init code that works with Proxmox for the VM template you want to build.
-1. Get networking and auth figured out to have GitHub Actions push code back to on-prem proxmox API on the cluster.
-1. Test on proxmox cluster.
 
 ## Path to Production
 
