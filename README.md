@@ -26,6 +26,9 @@ Networking
 
 * Sidero and Talos for full kubernetes infrastructure
 
+To me Talos' approach to minimalism, security and API driven OS management make it very attractive. It can all be done using SSH of course but nothing quite slots in to all of my monitoring and observability tools as an HTTP or gRPC API.
+For Sidero the draw is the same declarative management paradigms I'm used to in all of my other systems. Combined with the self-healing and reactive capabilities a reconciliation system brings to the table.
+
 No traditional Hypervisor or normal OS. k8s from control plane down.
 
 Control plane node
@@ -47,6 +50,7 @@ Interact with machines using only APIs, probably with Python scripts I write for
 Getting Started:
 * [Kubernetes Production Environment](https://kubernetes.io/docs/setup/production-environment/)
 * [Bare Metal Kubernetes](https://www.youtube.com/watch?v=XmgIlq2gEsg&t=781)
+    * [Sidero](https://www.sidero.dev)
 * [Bootstrapping clusters with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/)
 
 Ceph distributed storage
@@ -65,8 +69,6 @@ Control Plane
 Reverse Proxy, LB, Ingress, API gateway
 * [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/)
 * [MetalLB](https://metallb.universe.tf/installation/)
-    * [Setting up in proxmox](https://canthonyscott.com/setting-up-a-k3s-kubernetes-cluster-within-proxmox/)
-* [LAN reverse proxy](https://pve.proxmox.com/wiki/Web_Interface_Via_Nginx_Proxy)
 
 External DNS, Proxy, and Registrar
 * [CloudFlare](https://dash.cloudflare.com/f)
@@ -77,6 +79,7 @@ DNS
     * [DNS-Over-HTTPS](https://docs.pi-hole.net/guides/dns/cloudflared/)
     * [WireGuard](https://docs.pi-hole.net/guides/vpn/wireguard/concept/)
     * [Dynamic DNS](https://docs.pi-hole.net/guides/vpn/openvpn/dyndns/)
+    * [PiHole Sync](https://www.youtube.com/watch?v=IFVYe3riDRA&t=196s)
 
 SSO
 * [Authelia](https://www.authelia.com/docs/)
@@ -84,6 +87,7 @@ SSO
 Code repo and Continuous Integration
 * [GitHub](https://github.com)
 * [GitHub Actions](https://github.com)
+* [Local Azure Pipelines Runner](https://www.youtube.com/watch?v=rO-VKProMp8)
 
 gitOps and Continuous Delivery 
 * [argoCD](https://argo-cd.readthedocs.io/en/stable/)
