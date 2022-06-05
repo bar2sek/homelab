@@ -51,12 +51,12 @@ Getting Started:
 
 Ceph distributed storage
 * [rbd](https://kubernetes.io/docs/concepts/storage/volumes/#rbd)
+* [Rook with Talos](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/)
 * [Rook](https://rook.io/docs/rook/v1.9/ceph-storage.html)
 * [Simple 3 node Ceph Cluster](https://www.jamescoyle.net/how-to/1244-create-a-3-node-ceph-storage-cluster)
 
 Hardened k8s OS
 * [Talos Linux](https://www.talos.dev)
-* [Proxmox Doc](https://www.talos.dev/docs/v0.14/virtualized-platforms/proxmox/#installation)
 
 Control Plane
 * [Cluster API](https://cluster-api.sigs.k8s.io/introduction.html)
@@ -68,8 +68,15 @@ Reverse Proxy, LB, Ingress, API gateway
     * [Setting up in proxmox](https://canthonyscott.com/setting-up-a-k3s-kubernetes-cluster-within-proxmox/)
 * [LAN reverse proxy](https://pve.proxmox.com/wiki/Web_Interface_Via_Nginx_Proxy)
 
+External DNS, Proxy, and Registrar
+* [CloudFlare](https://dash.cloudflare.com/f)
+
 DNS
 * [pihole](https://pi-hole.net)
+    * [FTLDNS](https://docs.pi-hole.net/guides/dns/unbound/)
+    * [DNS-Over-HTTPS](https://docs.pi-hole.net/guides/dns/cloudflared/)
+    * [WireGuard](https://docs.pi-hole.net/guides/vpn/wireguard/concept/)
+    * [Dynamic DNS](https://docs.pi-hole.net/guides/vpn/openvpn/dyndns/)
 
 SSO
 * [Authelia](https://www.authelia.com/docs/)
