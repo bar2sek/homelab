@@ -46,12 +46,12 @@ Interact with machines using only APIs, probably with Python scripts I write for
 
 Getting Started:
 * [Kubernetes Production Environment](https://kubernetes.io/docs/setup/production-environment/)
+* [Bare Metal Kubernetes](https://www.youtube.com/watch?v=XmgIlq2gEsg&t=781)
 * [Bootstrapping clusters with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/)
 
 Ceph distributed storage
 * [rbd](https://kubernetes.io/docs/concepts/storage/volumes/#rbd)
-* [Rook](https://rook.io/)
-* [Manually Mount a Ceph Storage Pool in Proxmox](https://www.jamescoyle.net/how-to/1253-manually-mount-a-ceph-storage-pool-in-proxmox)
+* [Rook](https://rook.io/docs/rook/v1.9/ceph-storage.html)
 * [Simple 3 node Ceph Cluster](https://www.jamescoyle.net/how-to/1244-create-a-3-node-ceph-storage-cluster)
 
 Hardened k8s OS
@@ -85,8 +85,6 @@ gitOps and Continuous Delivery
 
 Infrastructure as Code
 * [Terraform cloud-init](https://learn.hashicorp.com/tutorials/terraform/cloud-init)
-* [Terraform with proxmox](https://austinsnerdythings.com/2021/09/01/how-to-deploy-vms-in-proxmox-with-terraform/)
-* [pulumi](https://www.pulumi.com/docs/)
 
 Image registry
 * [Harbor](https://goharbor.io/)
@@ -106,7 +104,7 @@ Observability
 * [Grafana](https://grafana.com/)
 
 Backups
-* [Proxmox Backup Server](https://www.proxmox.com/en/proxmox-backup-server)
+* ???
 
 ## Hosted services
 
