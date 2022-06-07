@@ -24,20 +24,19 @@ Networking
 
 ## Setup and overall plan for kubernetes clusters
 
-* Sidero and Talos for full kubernetes infrastructure
+* Sidero and Talos for full kubernetes infrastructure.
+* No traditional Hypervisor or normal OS. k8s from control plane down.
 
 To me Talos' approach to minimalism, security and API driven OS management make it very attractive. It can all be done using SSH of course but nothing quite slots in to all of my monitoring and observability tools as an HTTP or gRPC API.
 For Sidero the draw is the same declarative management paradigms I'm used to in all of my other systems. Combined with the self-healing and reactive capabilities a reconciliation system brings to the table.
 
-No traditional Hypervisor or normal OS. k8s from control plane down.
-
 Control plane node
 - external LB
-- Cluster API host for Sidero
-- CI/CD host for running automation to cluster
+- Cluster API host for Sidero/Crossplane for keeping infra in sync
+- ArgoCD for running automation to cluster
 
 3 nodes in cluster are Sidero servers
-- deployed with CAPI
+- deployed with CAPI using Crossplane
 - install/configure Ceph using [Rook](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/)
 - install all keys and setup for clustering
 
@@ -95,7 +94,7 @@ gitOps and Continuous Delivery
 * [Helm](https://helm.sh)
 
 Infrastructure as Code
-* [Terraform cloud-init](https://learn.hashicorp.com/tutorials/terraform/cloud-init)
+* [CrossPlane](https://crossplane.io/)
 
 Image registry
 * [Harbor](https://goharbor.io/)
@@ -114,8 +113,11 @@ Observability
 * [Prometheus](https://prometheus.io/)
 * [Grafana](https://grafana.com/)
 
+Documentation
+* [Hugo](https://gohugo.io/)
+
 Backups
-* ???
+* [K10?](https://www.youtube.com/watch?v=01qcYSck1c4)
 
 ## Hosted services
 
