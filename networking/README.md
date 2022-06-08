@@ -1,16 +1,16 @@
 ## VLAN Design
 
-| name         | wifi | vlan | ip         | devices                                                                                  |
-|:------------:|:----:|:----:|:----------:|:----------------------------------------------------------------------------------------:|
-| MGMT          | no   | 1    | 10.10.1.0/24  | udmp usw access points IPMI ports                                                                   |
-| DNS          | no   | 5    | 10.10.5.0/24  | odroid (10.10.5.5) rpizero (10.10.5.6)                                                   |
-| main         | yes  | 192   | 192.168.1.0/24 | wired: desktops wifi: phones  laptops                                                             |
-| IoT          | yes  | 20   | 10.10.20.0/24 | wired: ? wifi: ecobee thermostat (wifi) |
-| NoT | no   | 30   | 10.10.30.0/24 | Sonos AMP?                                                                    |
-| Server      | no   | 40   | 10.10.40.0/24 | Sidero server cluster
-| Ceph Public | no   | 50   | 10.10.50.0/24 |                                                                     |
-| Ceph Cluster | no   | 60   | 10.10.60.0/24 |                                                                     |
-| vpn.bar2sek.com | no   | 172   | 172.16.0.0/24 | Personal External Access                                                                    |
+| name         | wifi | speed | vlan | ip         | devices                                                                                  |
+|:------------:|:----:|:----:|:----:|:----------:|:----------------------------------------------------------------------------------------:|
+| MGMT          | no   | 1G | 1    | 10.10.1.0/24  | udmp usw access points IPMI ports                                                                   |
+| DNS          | no   | 1G | 5    | 10.10.5.0/24  | odroid (10.10.5.5) rpizero (10.10.5.6)                                                   |
+| main         | yes  | 1G | 192   | 192.168.1.0/24 | wired: desktops wifi: phones  laptops                                                             |
+| IoT          | yes  | 1G | 20   | 10.10.20.0/24 | wired: ? wifi: ecobee thermostat (wifi) |
+| NoT | no   | 1G   | 30 | 10.10.30.0/24 | Sonos AMP?                                                                    |
+| Server      | no   | 1G | 40   | 10.10.40.0/24 | Sidero server cluster
+| Ceph Public | no   | 10G | 50   | 10.10.50.0/24 |                                                                     |
+| Ceph Cluster | no   | 10G | 60   | 10.10.60.0/24 |                                                                     |
+| vpn.bar2sek.com | no   | 1G | 172   | 172.16.0.0/24 | Personal External Access                                                                    |
 
 ## firewall rules
 by default traffic is blocked from between internal networks (RFC1918), with the following exceptions
