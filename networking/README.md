@@ -56,3 +56,7 @@ vlan172 - VPN network in Unifi
 ## Diagram for logical network
 
 ((placeholder))
+
+## Reverse Proxy Scheme
+
+((placeholder))
