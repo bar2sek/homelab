@@ -22,7 +22,7 @@ Networking
 ## Setup and overall plan for kubernetes clusters
 
 * Sidero and Talos for full kubernetes infrastructure.
-* No traditional Hypervisor or OS. k8s from control plane down.
+* No traditional Hypervisor or OS. kubernetes from control plane down.
 
 `To me Talos' approach to minimalism, security and API driven OS management make it very attractive. It can all be done using SSH of course but nothing quite slots in to all of my monitoring and observability tools as an HTTP or gRPC API.
 For Sidero the draw is the same declarative management paradigms I'm used to in all of my other systems. Combined with the self-healing and reactive capabilities a reconciliation system brings to the table.`
@@ -39,9 +39,9 @@ Control plane node
 - install/configure Ceph using [Rook](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/)
 - install all keys and setup for clustering
 
-No Anisble or Pulumi for HW or VM configuration. Everything is done using CAPI and k8s using YAML configs in Git.
+No Anisble, Pulumi, or Terraform for HW or VM configuration. Everything is done using CAPI and kubernetes using YAML configs in Git.
 
-All gitOps based with CI/CD to deploy HW and software. Ceph storage and all k8s clusters on bare metal with PXE boot.
+All gitOps based with CI/CD to deploy HW and software. Ceph storage and all kubernetes clusters on bare metal with PXE boot.
 
 Interact with machines using only APIs, probably with Python scripts I write for whatever in the CI.
 
