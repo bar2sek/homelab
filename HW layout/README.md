@@ -7,8 +7,8 @@
 * 10G network and NVMe/SSD drives for Ceph
 
 #### AMD gaming PC
-* native Windows dev and gaming environment
-* All Supporting VMs in Hyper-V
+* Fedora 36 for gaming
+* Docker Desktop Cluster for off cluster services
     * Database
     * Load Balancer
     * Pihole for DNS
@@ -17,5 +17,4 @@
 
 ### Backup strategy
 * how and what to back up???
-    * compress, encrypt and upload to offsite Synology
-    * compress, encrypt and upload to Azure bucket or S3
+    * K10? [Nana video](https://www.youtube.com/watch?v=01qcYSck1c4&t=1s)
