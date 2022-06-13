@@ -4,10 +4,10 @@
 |:------------:|:----:|:----:|:----:|:----------:|:----------------------------------------------------------------------------------------:|
 | MGMT          | no   | 1G | 1    | 10.10.1.0/24  | udmp usw access points IPMI ports                                                                   |
 | DNS          | no   | 1G | 5    | 10.10.5.0/24  | PiHole (10.10.5.5) Traefik (10.10.5.6)                                                   |
-| main         | yes  | 1G | 192   | 192.168.1.0/24 | wired: desktops wifi: phones  laptops                                                             |
+| default         | yes  | 1G | 192   | 192.168.1.0/24 | wired: desktops wifi: phones  laptops                                                             |
 | IoT          | yes  | 1G | 20   | 10.10.20.0/24 | wired: ? wifi: ecobee thermostat (wifi) |
 | NoT | no   | 1G   | 30 | 10.10.30.0/24 | Sonos AMP?                                                                    |
-| Server      | no   | 10G | 40   | 10.10.40.0/24 | Sidero server cluster
+| Kubernetes Cluster      | no   | 10G | 40   | 10.10.40.0/24 | Sidero server cluster
 | Ceph Public | no   | 10G | 50   | 10.10.50.0/24 | Software defined storage in Sidero cluster                                                                    |
 
 ## Firewall rules
@@ -30,12 +30,11 @@ vlan30 - NoT devices (internal only - no external access)
 Allow Established/Related traffic from not-isolated VLAN to any network
 Block traffic to external networks
 
-vlan40 - servers
+vlan40 - Kubernetes Cluster 10G
 Allow Established/Related traffic from servers VLAN to any network
 
-vlan50 and 60 - for Ceph software defined storage 10G
-
-vlan172 - VPN network in Unifi
+vlan50 - Storage 10G
+Allow Established/Related traffic from Ceph only to vlan40
 
 ## Diagram for physical network
 
@@ -47,4 +46,10 @@ vlan172 - VPN network in Unifi
 
 ## Reverse Proxy Scheme
 
+### External Reverse Proxy: CloudFlare
+
 [Cloudflared with Tunnel and Access](https://noted.lol/say-goodbye-to-reverse-proxy-and-hello-to-cloudflare-tunnels/)
+
+### Internal Reverse Proxy: Traefik
+
+[Techo Tim video](https://www.youtube.com/watch?v=liV3c9m_OX8&t=524s)
