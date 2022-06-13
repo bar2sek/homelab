@@ -16,18 +16,17 @@ by default traffic is blocked from between internal networks (RFC1918), with the
 vlan1 - management devices: udm pro, unifi switch poe, unifi access points
 Allow all traffic from mgmt LAN to any network
 
-vlan5 - dns servers
-Allow DNS requests from local networks to DNS servers
-iptables NAT rules on the UDMP to redirect all DNS queries to the 2 DNS servers
+vlan5 - control plane
+Allow Established/Related traffic from VLAN to any network
 
 vlan192 - trusted devices such as desktops, personal laptops
-Allow Established/Related traffic from main VLAN to any network
+Allow Established/Related traffic from VLAN to any network
 
-vlan20 - IoT + Work devices (with external access)
-Deny Established/Related traffic from iot VLAN to any internal network
+vlan20 - IoT + Work devices (external only - no internal access)
+Deny Established/Related traffic from VLAN to only the internet
 
 vlan30 - NoT devices (internal only - no external access)
-Allow Established/Related traffic from not-isolated VLAN to any network
+Allow Established/Related traffic from VLAN to any network
 Block traffic to external networks
 
 vlan40 - Kubernetes Cluster 10G
