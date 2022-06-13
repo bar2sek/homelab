@@ -1,5 +1,5 @@
 # homelab
-scripts, documentation, and diagrams for my personal home lab
+scripts, notes, documentation, and diagrams for my personal home lab
 
 ## Infrastructure
 
@@ -14,10 +14,7 @@ Networking
 * 2x Unifi WAPs
 * Unifi Dream Machine Pro router
     * IPS
-    * DDNS
-    * VPN RADIUS server
     * unifi controller
-    * DHCP
     * VLANs
 
 ## Platform
@@ -25,13 +22,15 @@ Networking
 ## Setup and overall plan for kubernetes clusters
 
 * Sidero and Talos for full kubernetes infrastructure.
-* No traditional Hypervisor or normal OS. k8s from control plane down.
+* No traditional Hypervisor or OS. k8s from control plane down.
 
-To me Talos' approach to minimalism, security and API driven OS management make it very attractive. It can all be done using SSH of course but nothing quite slots in to all of my monitoring and observability tools as an HTTP or gRPC API.
-For Sidero the draw is the same declarative management paradigms I'm used to in all of my other systems. Combined with the self-healing and reactive capabilities a reconciliation system brings to the table.
+`To me Talos' approach to minimalism, security and API driven OS management make it very attractive. It can all be done using SSH of course but nothing quite slots in to all of my monitoring and observability tools as an HTTP or gRPC API.
+For Sidero the draw is the same declarative management paradigms I'm used to in all of my other systems. Combined with the self-healing and reactive capabilities a reconciliation system brings to the table.`
 
 Control plane node
 - external LB
+- DNS
+- reverse proxy
 - Cluster API host for Sidero/Crossplane for keeping infra in sync
 - ArgoCD for running automation to cluster
 
@@ -47,13 +46,10 @@ All gitOps based with CI/CD to deploy HW and software. Ceph storage and all k8s 
 Interact with machines using only APIs, probably with Python scripts I write for whatever in the CI.
 
 Getting Started:
-* [Kubernetes Production Environment](https://kubernetes.io/docs/setup/production-environment/)
 * [Bare Metal Kubernetes](https://www.youtube.com/watch?v=XmgIlq2gEsg&t=781)
     * [Sidero](https://www.sidero.dev)
-* [Bootstrapping clusters with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/)
 
 Ceph distributed storage
-* [rbd](https://kubernetes.io/docs/concepts/storage/volumes/#rbd)
 * [Rook with Talos](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/)
 * [Rook](https://rook.io/docs/rook/v1.9/ceph-storage.html)
 * [Simple 3 node Ceph Cluster](https://www.jamescoyle.net/how-to/1244-create-a-3-node-ceph-storage-cluster)
