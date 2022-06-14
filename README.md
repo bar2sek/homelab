@@ -46,8 +46,8 @@ Control plane node (AMD Ryzen)
     * [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) reverse proxy
     * [Crossplane](https://crossplane.io/) infrastructure as code
     * [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) deploying to cluster
-    * Database of some sort??
     * [K10](https://www.youtube.com/watch?v=01qcYSck1c4) kubernetes backup
+    * Database of some sort??
 
 3 cluster nodes (SuperMicro machines)   
 * [Talos Linux](https://www.talos.dev/) clustered and operated by Sidero [Cluster API](https://cluster-api.sigs.k8s.io/)   
@@ -56,7 +56,7 @@ Control plane node (AMD Ryzen)
     * [Vault](https://www.vaultproject.io/) secret store
     * [istio](https://istio.io/) application service mesh
     * [Prometheus](https://prometheus.io/)
-    * [Grafana](https://grafana.com/) obvserability
+    * [Grafana](https://grafana.com/) observability
     * [Hugo](https://gohugo.io/) documentation
     * [NextCloud](https://nextcloud.com/) personal cloud
     * [Home Assistant](https://www.home-assistant.io/)
