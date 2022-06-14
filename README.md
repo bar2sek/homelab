@@ -4,16 +4,16 @@ scripts, notes, documentation, and diagrams for my personal homelab
 ## Infrastructure Hardware
 
 ### Servers
-* 2x 8 core SuperMicro edge servers 32Gb RAM
+* 2x 8 core SuperMicro edge servers 32GB RAM
     * 2x 10G network
     * 4x 1G network
     * 1x 2TB nVme
     * 1x 2TB SATA SSD
-* 1x 28 core SuperMicro server 160Gb RAM
+* 1x 28 core SuperMicro server 160GB RAM
     * 2x 10G network
     * 2x 1G network
     * 2x 2TB SATA SSD
-* 1x 24 core AMD Ryzen
+* 1x 24 core AMD Ryzen 64GB RAM
     * 2x 10G network
     * 1x 1G network
     * 4x 4TB HDD
@@ -29,7 +29,7 @@ scripts, notes, documentation, and diagrams for my personal homelab
 * 24 port 1Gb Unifi switch
 * 8 port 10Gb Unifi switch
 * 8 port PoE 1Gb Unifi switch
-* 2x Unifi WAPs
+* 2x Unifi wireless access points
 
 # Platform
 
@@ -40,14 +40,14 @@ External dDNS, Reverse Proxy, Zero Trust Tunnel, and Registrar
 
 Control plane node (AMD Ryzen)  
 * [Fedora Linux](https://getfedora.org/en/workstation/) for OS and light gaming
-* [Docker Desktop](https://www.docker.com/products/docker-desktop/) for control plane kubernetes services
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/) for control plane services over main cluster
     * [MetalLB](https://metallb.universe.tf/installation/) external LB
     * [Pihole](https://pi-hole.net) internal DNS
     * [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) reverse proxy
     * [Crossplane](https://crossplane.io/) infrastructure as code
     * [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) deploying to cluster
     * Database of some sort??
-    * kubernetes backup using [K10](https://www.youtube.com/watch?v=01qcYSck1c4)
+    * [K10](https://www.youtube.com/watch?v=01qcYSck1c4) kubernetes backup
 
 3 cluster nodes (SuperMicro machines)   
 * [Talos Linux](https://www.talos.dev/) clustered and operated by Sidero [Cluster API](https://cluster-api.sigs.k8s.io/)   
