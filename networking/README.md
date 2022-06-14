@@ -52,3 +52,8 @@ Allow Established/Related traffic from Ceph only to vlan40
 ### Internal Reverse Proxy: Traefik
 
 [Techo Tim video](https://www.youtube.com/watch?v=liV3c9m_OX8&t=524s)
+
+✅ Install servers in rack
+☑️ Diagram network [Architecture](https://www.microsoft.com/en-us/microsoft-365/business-insights-ideas/resources/tips-for-mapping-your-network-diagram)
+✅ Create networks in Unifi
+☑️ Create [Firewall rules](https://help.ui.com/hc/en-us/articles/115003173168-UniFi-UDM-USG-Introduction-to-Firewall-Rules#4) and [MGMT network](https://help.ui.com/hc/en-us/articles/115010254227-UniFi-USG-Firewall-How-to-Disable-InterVLAN-Routing#option%203)
