@@ -4,12 +4,12 @@ scripts, notes, documentation, and diagrams for my personal homelab
 ## Infrastructure Hardware
 
 ### Servers
-* 2x 8 core SuperMicro edge servers 32GB RAM
+* 2x 8 core Intel Xeon SuperMicro edge servers 32GB RAM
     * 2x 10G network
     * 4x 1G network
     * 1x 2TB nVme
     * 1x 2TB SATA SSD
-* 1x 28 core SuperMicro server 160GB RAM
+* 1x 28 core Intel Xeon SuperMicro server 160GB RAM
     * 2x 10G network
     * 2x 1G network
     * 2x 2TB SATA SSD
