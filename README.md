@@ -1,53 +1,47 @@
-# homelab
-scripts, notes, documentation, and diagrams for my personal home lab
+# Homelab
+scripts, notes, documentation, and diagrams for my personal homelab
 
 ## Infrastructure
 
-* 2x 8 core SuperMicro edge servers 32Gb RAM + 10G networking
-* 1x 28 core SuperMicro server 160Gb RAM + 10G networking
-* 1x 24 core AMD Ryzen 
+* 2x 8 core SuperMicro edge servers 32Gb RAM + 2x 10G networking each
+* 1x 28 core SuperMicro server 160Gb RAM + 2x 10G networking
+* 1x 24 core AMD Ryzen + 2x 10G networking
 
 Networking
 
 * 24 port 1Gb Unifi switch
 * 8 port 10Gb Unifi switch
+* 8 port PoE 1Gb Unifi switch
 * 2x Unifi WAPs
 * Unifi Dream Machine Pro router
-    * IPS
+    * IPS protection
     * unifi controller
-    * VLANs
+    * VLAN management
 
 ## Platform
 
-## Setup and overall plan for kubernetes clusters
-
-* Sidero and Talos for full kubernetes infrastructure.
-* No traditional Hypervisor or OS. kubernetes from control plane down.
-
-`To me Talos' approach to minimalism, security and API driven OS management make it very attractive. It can all be done using SSH of course but nothing quite slots in to all of my monitoring and observability tools as an HTTP or gRPC API.
-For Sidero the draw is the same declarative management paradigms I'm used to in all of my other systems. Combined with the self-healing and reactive capabilities a reconciliation system brings to the table.`
+* [Sidero Metal](https://www.sidero.dev/) for server provisioning and lifecycle management and [Talos Linux](https://www.talos.dev/) for immutable and minimal kubernetes native OS on each node.
 
 Control plane node
 - external LB
-- DNS
+- internal DNS
 - reverse proxy
 - Cluster API host for Sidero/Crossplane for keeping infra in sync
 - ArgoCD for running automation to cluster
 
-3 nodes in cluster are Sidero servers
+3 Sidero server cluster nodes
 - deployed with CAPI using Crossplane
 - install/configure Ceph using [Rook](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/)
 - install all keys and setup for clustering
 
-No Anisble, Pulumi, or Terraform for HW or VM configuration. Everything is done using CAPI and kubernetes using YAML configs in Git.
-
-All gitOps based with CI/CD to deploy HW and software. Ceph storage and all kubernetes clusters on bare metal with PXE boot.
-
-Interact with machines using only APIs, probably with Python scripts I write for whatever in the CI.
-
 Getting Started:
 * [Bare Metal Kubernetes](https://www.youtube.com/watch?v=XmgIlq2gEsg&t=781)
-    * [Sidero](https://www.sidero.dev)
+
+### Setup
+* [Setup](https://www.sidero.dev/v0.5/getting-started/prereq-kubernetes/)
+* [Build Sidero Lab](https://itnext.io/build-kubernetes-clusters-using-sidero-metal-talos-linux-on-raspberry-pi-54a9961a7d4c)
+* [Sidero Metal Webinar](https://www.youtube.com/watch?v=hPuu5mgIl2M)
+* [Homelab with Sidero](https://www.youtube.com/watch?v=ZbXwTXSI9lk)
 
 Ceph distributed storage
 * [Rook with Talos](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/)
@@ -65,7 +59,7 @@ Reverse Proxy, LB, Ingress, API gateway
 * [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/)
 * [MetalLB](https://metallb.universe.tf/installation/)
 
-External DNS, Proxy, and Registrar
+External DNS, Proxy, Tunnels, and Registrar
 * [CloudFlare](https://dash.cloudflare.com/f)
 
 DNS
@@ -84,13 +78,12 @@ Code repo and Continuous Integration
 * [GitHub Actions](https://github.com)
 * [Local Azure Pipelines Runner](https://www.youtube.com/watch?v=rO-VKProMp8)
 
-gitOps and Continuous Delivery 
-* [argoCD](https://argo-cd.readthedocs.io/en/stable/)
-    * [Create and Manage Kubernetes Clusters with Cluster API and ArgoCD](https://piotrminkowski.com/2021/12/03/create-kubernetes-clusters-with-cluster-api-and-argocd/)
+gitOps Continuous Delivery + Infrastructure as Code
+* [Create and Manage Kubernetes Clusters with Cluster API and ArgoCD](https://piotrminkowski.com/2021/12/03/create-kubernetes-clusters-with-cluster-api-and-argocd/)
+    * [argoCD](https://argo-cd.readthedocs.io/en/stable/)
 * [Helm](https://helm.sh)
-
-Infrastructure as Code
-* [CrossPlane](https://crossplane.io/)
+* [DevOps Toolkit argoCD + CrossPlane](https://www.youtube.com/watch?v=yrj4lmScKHQ&t=216s)
+    * [CrossPlane](https://crossplane.io/)
 
 Image registry
 * [Harbor](https://goharbor.io/)
