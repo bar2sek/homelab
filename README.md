@@ -1,4 +1,4 @@
-# Homelab
+# Ryan's Homelab
 scripts, notes, documentation, and diagrams for my personal homelab
 
 ## Infrastructure Hardware
@@ -31,7 +31,7 @@ scripts, notes, documentation, and diagrams for my personal homelab
 * 8 port PoE 1Gb Unifi switch
 * 2x Unifi WAPs
 
-## Platform
+# Platform
 
 * [Sidero Metal](https://www.sidero.dev/) for server provisioning and lifecycle management using [Talos Linux](https://www.talos.dev/) for immutable and minimal kubernetes native OS on each node.
 
@@ -39,23 +39,35 @@ External dDNS, Reverse Proxy, Zero Trust Tunnel, and Registrar
 * [CloudFlare](https://dash.cloudflare.com/f)
 
 Control plane node (AMD Ryzen)  
-Fedora Linux for light gaming and Docker Desktop for kubernetes
-* [MetalLB](https://metallb.universe.tf/installation/) external LB
-* [Pihole](https://pi-hole.net) internal DNS
-* [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) reverse proxy
-* Cluster API host for [Crossplane](https://crossplane.io/) for keeping infra in sync
-* [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) for running automation to cluster
-* Database of some sort??
-* kubernetes backup using [K10](https://www.youtube.com/watch?v=01qcYSck1c4)
+* [Fedora Linux](https://getfedora.org/en/workstation/) for OS and light gaming
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/) for control plane kubernetes services
+    * [MetalLB](https://metallb.universe.tf/installation/) external LB
+    * [Pihole](https://pi-hole.net) internal DNS
+    * [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) reverse proxy
+    * [Crossplane](https://crossplane.io/) infrastructure as code
+    * [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) deploying to cluster
+    * Database of some sort??
+    * kubernetes backup using [K10](https://www.youtube.com/watch?v=01qcYSck1c4)
 
-3 Sidero server cluster nodes (SuperMicro machines)   
+3 cluster nodes (SuperMicro machines)   
 * [Talos Linux](https://www.talos.dev/) clustered and operated by Sidero [Cluster API](https://cluster-api.sigs.k8s.io/)   
 * [Rook](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/) for distributed software defined storage
+    * [Harbor](https://goharbor.io/) image registry
+    * [Vault](https://www.vaultproject.io/) secret store
+    * [istio](https://istio.io/) application service mesh
+    * [Prometheus](https://prometheus.io/)
+    * [Grafana](https://grafana.com/) obvserability
+    * [Hugo](https://gohugo.io/) documentation
+    * [NextCloud](https://nextcloud.com/) personal cloud
+    * [Home Assistant](https://www.home-assistant.io/)
+    * [Bitwarden](https://bitwarden.com/) off-grid pw manager
+    * [Authelia](https://www.authelia.com/docs/) hosted SSO?
+    * [Helm](https://helm.sh)
 
 ## Getting Started/Notes/Links:
 * [Bare Metal Kubernetes](https://www.youtube.com/watch?v=XmgIlq2gEsg&t=781)
 * [Sidero Setup](https://www.sidero.dev/v0.5/getting-started/prereq-kubernetes/)
-* [Build Sidero Lab](https://itnext.io/build-kubernetes-clusters-using-sidero-metal-talos-linux-on-raspberry-pi-54a9961a7d4c)
+* [Build a Sidero Lab](https://itnext.io/build-kubernetes-clusters-using-sidero-metal-talos-linux-on-raspberry-pi-54a9961a7d4c)
 * [Sidero Metal Webinar](https://www.youtube.com/watch?v=hPuu5mgIl2M)
 * [Homelab with Sidero](https://www.youtube.com/watch?v=ZbXwTXSI9lk)
 
@@ -64,37 +76,6 @@ Ceph distributed storage
 * [Rook](https://rook.io/docs/rook/v1.9/ceph-storage.html)
 * [Simple 3 node Ceph Cluster](https://www.jamescoyle.net/how-to/1244-create-a-3-node-ceph-storage-cluster)
 
-SSO
-* [Authelia](https://www.authelia.com/docs/)
-
-Code repo and Continuous Integration
-* [GitHub](https://github.com)
-* [GitHub Actions](https://github.com)
-* [Local Azure Pipelines Runner](https://www.youtube.com/watch?v=rO-VKProMp8)
-
 gitOps Continuous Delivery + Infrastructure as Code
 * [Create and Manage Kubernetes Clusters with Cluster API and ArgoCD](https://piotrminkowski.com/2021/12/03/create-kubernetes-clusters-with-cluster-api-and-argocd/)
-* [Helm](https://helm.sh)
 * [DevOps Toolkit argoCD + CrossPlane](https://www.youtube.com/watch?v=yrj4lmScKHQ&t=216s)
-
-Image registry
-* [Harbor](https://goharbor.io/)
-* [GitHub Packages](https://github.com)
-
-Secret Store
-* [Vault](https://www.vaultproject.io/)
-
-Service Mesh
-* [istio](https://istio.io/)
-
-Observability
-* [Prometheus](https://prometheus.io/)
-* [Grafana](https://grafana.com/)
-
-Documentation
-* [Hugo](https://gohugo.io/)
-
-### Other services to run on kubernetes cluster
-* [NextCloud](https://nextcloud.com/)
-* [Home Assistant](https://www.home-assistant.io/)
-* [Bitwarden](https://bitwarden.com/)
