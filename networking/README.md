@@ -2,12 +2,10 @@
 
 | name         | wifi | speed | vlan | ip         | devices                                                                                  |
 |:------------:|:----:|:----:|:----:|:----------:|:----------------------------------------------------------------------------------------:|
-| MGMT          | no   | 1G | 1    | 10.10.1.0/24  | udmp usw access points IPMI ports                                                                   |
-| DNS          | no   | 1G | 5    | 10.10.5.0/24  | PiHole (10.10.5.5) Traefik (10.10.5.6)                                                   |
+| MGMT          | no   | 1G | 1    | 10.10.1.0/24  | udmp usw access points IPMI ports                                                                   |                                                |
 | default         | yes  | 1G | 192   | 192.168.1.0/24 | wired: desktops wifi: phones  laptops                                                             |
 | IoT          | yes  | 1G | 20   | 10.10.20.0/24 | wired: ? wifi: ecobee thermostat (wifi) |
 | NoT | no   | 1G   | 30 | 10.10.30.0/24 | ???                                                                    |
-| Kubernetes Cluster      | no   | 10G | 40   | 10.10.40.0/24 | Sidero server cluster
 | Ceph Public | no   | 10G | 50   | 10.10.50.0/24 | Software defined storage in Sidero cluster                                                                    |
 
 ## Firewall rules
