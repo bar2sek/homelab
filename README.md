@@ -1,37 +1,9 @@
 # Ryan's Homelab
-scripts, notes, documentation, and diagrams for my personal homelab
 
-## Infrastructure Hardware
+## Goal
+To learn the intricacies of building, operating, maintaining, and serving apps/services on an on-prem kubernetes infrastructure.
 
-### Servers
-* 2x 8 core Intel Xeon SuperMicro edge servers 32GB RAM
-    * 2x 10G network
-    * 4x 1G network
-    * 1x 2TB nVme
-    * 1x 2TB SATA SSD
-* 1x 28 core Intel Xeon SuperMicro server 160GB RAM
-    * 2x 10G network
-    * 2x 1G network
-    * 2x 2TB SATA SSD
-* 1x 24 core AMD Ryzen 64GB RAM
-    * 2x 10G network
-    * 1x 1G network
-    * 4x 4TB HDD
-    * 1x 1TB nVme
-* Offsite Synology NAS
-    * 2x 4TB HDD
-
-### Networking
-* Unifi Dream Machine Pro router
-    * IPS protection
-    * unifi controller
-    * VLAN management
-* 24 port 1Gb Unifi switch
-* 8 port 10Gb Unifi switch
-* 8 port PoE 1Gb Unifi switch
-* 2x Unifi wireless access points
-
-# Platform
+### Platform Notes and Plans
 
 * [Sidero Metal](https://www.sidero.dev/) for server provisioning and lifecycle management using [Talos Linux](https://www.talos.dev/) for immutable and minimal kubernetes native OS on each node.
 
@@ -64,7 +36,7 @@ Control plane node (AMD Ryzen)
     * [Authelia](https://www.authelia.com/docs/) hosted SSO?
     * [Helm](https://helm.sh)
 
-## Getting Started/Notes/Links:
+## Resources:
 * [Bare Metal Kubernetes](https://www.youtube.com/watch?v=XmgIlq2gEsg&t=781)
 * [Sidero Setup](https://www.sidero.dev/v0.5/getting-started/prereq-kubernetes/)
 * [Build a Sidero Lab](https://itnext.io/build-kubernetes-clusters-using-sidero-metal-talos-linux-on-raspberry-pi-54a9961a7d4c)
