@@ -6,6 +6,7 @@
 | default         | yes  | 1G | 192   | 192.168.1.0/24 | wired: desktops wifi: phones  laptops                                                             |
 | IoT          | yes  | 1G | 20   | 10.10.20.0/24 | wired: ? wifi: ecobee thermostat (wifi) |
 | NoT | no   | 1G   | 30 | 10.10.30.0/24 | ???                                                                    |
+| Server      | no   | 10G | 40   | 10.10.40.0/24 | Sidero server cluster
 | Ceph Public | no   | 10G | 50   | 10.10.50.0/24 | Software defined storage in Sidero cluster                                                                    |
 
 ## Firewall rules
