@@ -4,8 +4,8 @@
 |:------------:|:----:|:----:|:----:|:----------:|:----------------------------------------------------------------------------------------:|
 | MGMT          | no   | 1G | 1    | 10.10.10.0/24  | IPMI ports, Proxmox URLs                                                                   |                                                |
 | default         | yes  | 1G | 192   | 192.168.1.0/24 | wired: desktops wifi: phones  laptops                                                             |
-| IoT          | yes  | 1G | 20   | 10.10.20.0/24 | wired: Work laptop wifi: ecobee thermostat (wifi), Guest Network |
-| NoT | no   | 1G   | 30 | 10.10.30.0/24 |  Cameras                                                                    |
+| IoT          | yes  | 1G | 20   | 10.10.20.0/24 | wired: Work laptop wifi: ecobee thermostat, guests |
+| NoT | yes   | 1G   | 30 | 10.10.30.0/24 |  Cameras                                                                    |
 | Server      | no   | 10G | 40   | 10.10.40.0/24 | k8s VM cluster, all servers
 | Ceph Public | no   | 10G | 50   | 10.10.50.0/24 | Software defined storage                                                                    |
 
