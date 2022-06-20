@@ -2,32 +2,32 @@
 
 | name         | wifi | speed | vlan | ip         | devices                                                                                  |
 |:------------:|:----:|:----:|:----:|:----------:|:----------------------------------------------------------------------------------------:|
-| MGMT          | no   | 1G | 1    | 10.10.10.0/24  | IPMI ports, Proxmox URLs                                                                   |                                                |
-| default         | yes  | 1G | 192   | 192.168.1.0/24 | wired: desktops wifi: phones  laptops                                                             |
+| MGMT          | no   | 1G | 10    | 10.10.10.0/24  | IPMI ports, Proxmox URLs                                                                   |                                                |
+| Default         | yes  | 1G | -   | 192.168.1.0/24 | wired: desktops wifi: phones  laptops                                                             |
 | IoT          | yes  | 1G | 20   | 10.10.20.0/24 | wired: Work laptop wifi: ecobee thermostat, guests |
 | NoT | yes   | 1G   | 30 | 10.10.30.0/24 |  Cameras                                                                    |
-| Server      | no   | 10G | 40   | 10.10.40.0/24 | k8s VM cluster, all servers
-| Ceph Public | no   | 10G | 50   | 10.10.50.0/24 | Software defined storage                                                                    |
+| VM      | no   | 10G | 40   | 10.10.40.0/24 | k8s VM cluster, all servers
+| Storage | no   | 10G | 50   | 10.10.50.0/24 | Software defined storage                                                                    |
 
 ## Firewall rules
 by default traffic is blocked from between internal networks (RFC1918), with the following exceptions:
 
-vlan10 - management interfaces: Server IPMI ports, Proxmox mgmt URLs
+vlan10 - MGMT: Server IPMI ports, Proxmox mgmt URLs
 
-vlan192 - trusted devices such as desktops, personal laptops
+vlan192 - Default: trusted devices such as desktops, personal laptops
 Allow Established/Related traffic from VLAN to any network
 
-vlan20 - IoT, Work devices, Guest Access (external only - no internal access)
+vlan20 - IoT: Work devices, Guest Access (external only - no internal access)
 Deny Established/Related traffic from VLAN to only the internet
 
-vlan30 - NoT devices (internal only - no external access)
+vlan30 - NoT: devices (internal only - no external access)
 Allow Established/Related traffic from VLAN to any network
 Block traffic to external networks
 
-vlan40 - VM/Server 10G
+vlan40 - VM: 10G
 Allow Established/Related traffic from servers VLAN to any network
 
-vlan50 - Storage 10G
+vlan50 - Storage: 10G
 Allow Established/Related traffic from Ceph only to vlan40
 
 ## Diagram for physical network
