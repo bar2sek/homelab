@@ -17,7 +17,7 @@ Proxmox 7.2
 1. Run `apt update` and `apt upgrade -y`
 1. Reboot
 
-### Add Clustering
+### Add Clustering (live migration of VMs)
 
 1. Setup cluster port and network
     - node > network > Create Linux Bridge > add IP/24 > add port name to use > optionally add Comment `pxmx-cluster`
@@ -26,10 +26,11 @@ Proxmox 7.2
 1. Add name `pxmx-cluster` and add second link for cluster network, ensure cluster network is Link 0 for higher priority.
 1. Do the same process on other two nodes, but `Join Cluster` and select info from first node.
 
-### Add High Availability
+### Add High Availability (auto live migration of individual VMs in case of node failure)
 
-1. 
-
+1. Start with VM in a shut down state.
+1. DataCenter > Add > Select VM to have HA > Fill in fields and selected 'Started' for state.
+1. VM should start when completed as specified. 
 
 ### Setup Ceph Cluster
 
