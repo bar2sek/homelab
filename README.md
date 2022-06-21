@@ -10,17 +10,6 @@ To learn the intricacies of building, operating, maintaining, and serving apps/s
 External dDNS, Reverse Proxy, Zero Trust Tunnel, and Registrar
 * [CloudFlare](https://dash.cloudflare.com/f)
 
-Control plane node (AMD Ryzen)  
-* [Fedora Linux](https://getfedora.org/en/workstation/) for OS and light gaming
-* [Docker Desktop](https://www.docker.com/products/docker-desktop/) for control plane services over main cluster
-    * [MetalLB](https://metallb.universe.tf/installation/) external LB
-    * [Pihole](https://pi-hole.net) internal DNS
-    * [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) reverse proxy
-    * [Crossplane](https://crossplane.io/) infrastructure as code
-    * [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) deploying to cluster
-    * [K10](https://www.youtube.com/watch?v=01qcYSck1c4) kubernetes backup
-    * Database of some sort??
-
 3 cluster nodes (SuperMicro machines)   
 * [Talos Linux](https://www.talos.dev/) clustered and operated by Sidero [Cluster API](https://cluster-api.sigs.k8s.io/)   
 * [Rook](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/) for distributed software defined storage
@@ -35,6 +24,16 @@ Control plane node (AMD Ryzen)
     * [Bitwarden](https://bitwarden.com/) off-grid pw manager
     * [Authelia](https://www.authelia.com/docs/) hosted SSO?
     * [Helm](https://helm.sh)
+    * [MetalLB](https://metallb.universe.tf/installation/) external LB
+    * [Pihole](https://pi-hole.net) internal DNS
+    * [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) reverse proxy
+    * [Crossplane](https://crossplane.io/) infrastructure as code
+    * [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) deploying to cluster
+    * [K10](https://www.youtube.com/watch?v=01qcYSck1c4) kubernetes backup
+    * Database of some sort??
+
+Backup node (AMD Ryzen)
+    * [Proxmox Backup Server](https://pbs.proxmox.com/wiki/index.php/Main_Page)
 
 ## Resources:
 * [Bare Metal Kubernetes](https://www.youtube.com/watch?v=XmgIlq2gEsg&t=781)
@@ -46,7 +45,7 @@ Control plane node (AMD Ryzen)
 Ceph distributed storage
 * [Rook with Talos](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/)
 * [Rook](https://rook.io/docs/rook/v1.9/ceph-storage.html)
-* [Simple 3 node Ceph Cluster](https://www.jamescoyle.net/how-to/1244-create-a-3-node-ceph-storage-cluster)
+* [Ceph Cluster Proxmox](https://pve.proxmox.com/wiki/Deploy_Hyper-Converged_Ceph_Cluster)
 
 gitOps Continuous Delivery + Infrastructure as Code
 * [Create and Manage Kubernetes Clusters with Cluster API and ArgoCD](https://piotrminkowski.com/2021/12/03/create-kubernetes-clusters-with-cluster-api-and-argocd/)
