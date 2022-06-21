@@ -7,10 +7,12 @@
     * 4x 1G network
     * 1x 2TB nVme
     * 1x 2TB SATA SSD
+    * pxmx boot: btrfs RAID 1 16GB SATAdom + 80G Intel SSD
 * 1x 28 core Intel Xeon SuperMicro server 160GB RAM
     * 2x 10G network
     * 2x 1G network
     * 2x 2TB SATA SSD
+    * pxmx boot: ZFS RAID 1 2x 16GB SATAdom
 * 1x 24 core AMD Ryzen 64GB RAM
     * 2x 10G network
     * 1x 1G network
