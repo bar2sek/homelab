@@ -17,7 +17,6 @@ Proxmox 7.2
 1. Run `apt update` and `apt upgrade -y`
 1. Reboot
 
-
 ### Add Clustering
 
 1. Setup cluster port and network
@@ -25,8 +24,13 @@ Proxmox 7.2
 1. Apply Changes
 1. Main node > DataCenter > Cluster > Create Cluster
 1. Add name `pxmx-cluster` and add second link for cluster network, ensure cluster network is Link 0 for higher priority.
-
+1. Do the same process on other two nodes, but `Join Cluster` and select info from first node.
 
 ### Add High Availability
+
+1. 
+
+
+### Setup Ceph Cluster
 
 1. 
