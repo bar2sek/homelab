@@ -7,6 +7,7 @@
 | NoT | yes   | 1G   | 30 | 10.10.30.0/24 |  Cameras                                                                    |
 | VM      | no   | 10G | 40   | 10.10.40.0/24 | k8s VM cluster, all servers
 | Storage | no   | 10G | 50   | 10.10.50.0/24 | Software defined storage                                                                    |
+| pxmx Cluster | no   | 1G | 60   | 10.10.60.0/24 | Cluster network for proxmox                                                                    |
 Default         | yes  | 1G | -   | 192.168.1.0/24 | wired: desktops wifi: phones  laptops                                                             |
 
 ## Firewall rules
