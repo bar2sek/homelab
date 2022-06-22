@@ -34,4 +34,4 @@ Proxmox 7.2
 
 ### Setup Ceph Cluster
 
-1. 
+1. [Docs](https://pve.proxmox.com/wiki/Deploy_Hyper-Converged_Ceph_Cluster#pve_ceph_install_wizard)
