@@ -5,8 +5,8 @@
 | MGMT          | no   | 1G | 10    | 10.10.10.0/24  | IPMI ports, Proxmox URLs                                                           
 | IoT          | yes  | 1G | 20   | 10.10.20.0/24 | Work laptop, ecobee thermostat, guests |
 | NoT | yes   | 1G   | 30 | 10.10.30.0/24 |  Cameras                                                                    |
-| VM      | no   | 10G | 40   | 10.10.40.0/24 | k8s VM cluster, all servers
-| Storage | no   | 10G | 50   | 10.10.50.0/24 | Software defined storage                                                                    |
+| Ceph      | no   | 10G | 40   | 10.10.40.0/24 | Ceph Public Network
+| VM | no   | 10G | 50   | 10.10.50.0/24 | kubernetes nodes                                                                    |
 | pxmx Cluster | no   | 1G | 60   | 10.10.60.0/24 | Cluster network for proxmox                                                                    |
 Default         | yes  | 1G | -   | 192.168.1.0/24 | wired: desktops wifi: phones  laptops                                                             |
 
@@ -25,11 +25,11 @@ vlan30 - NoT: devices (internal only - no external access)
 Allow Established/Related traffic from VLAN to any network
 Block traffic to external networks
 
-vlan40 - VM: 10G
-Allow Established/Related traffic from servers VLAN to any network
+vlan40 - Ceph: 10G
+Allow Established/Related traffic from Ceph only to vlan50
 
-vlan50 - Storage: 10G
-Allow Established/Related traffic from Ceph only to vlan40
+vlan50 - VM: 10G
+Allow Established/Related traffic from servers VLAN to any network
 
 ## Diagram for physical network
 
