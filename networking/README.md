@@ -49,11 +49,29 @@ Allow Established/Related traffic from servers VLAN to any network
 
 [Techo Tim video](https://www.youtube.com/watch?v=liV3c9m_OX8&t=524s)
 
-### Internal DNS
+## Internal DNS
 
-Pihole
+### Pihole Config
+1. Install Ubuntu 20.04 server with pihole name, install Openssh - 2 cores, 4GiB RAM, on VM network
+1. `apt update` and `apt upgrade -y`
+1. On pihole: `ssh-keygen` all defaults
+1. On Mac: `ssh-keygen` all defaults
+1. On Mac: `ssh-copy-id pihole@<piholeIP>` yes, password of pihole user on server.
+1. On Mac: `alias pihole="ssh 'pihole@<piholeIP>'"`
+1. Disable passworth auth on pihole
+    1. `sudo nano /etc/ssh/sshd_config`
+    1. Find `PasswordAuthentication yes`
+    1. Uncomment line and edit to `no`
+    1. `sudo systemctl restart ssh`
+1. Enable HA on proxmox for pihole VM (DataCenter > HA > Add > Select VM)
+1. Reserve IP and name to pihole in Unifi controller.
+1. `curl -sSL https://install.pi-hole.net | bash`
+1. Record admin password at conclusion of installation.
+1. Login to admin UI
+1. Settings > DNS > ✅ "Bind only to interface ethXYZ" to allow for mutlti-VLAN blocking.
+1. Set DNS server in Unifi controller to pihole IP
 
-When using multiple VLANS, must set in the pi-hole web gui in Settings under Interface settings check box from "Allow only local requests to Bind only" to "Bind only to interface ethXYZ" hit save and the problem went away.
+[DNS-Over-HTTPS](https://docs.pi-hole.net/guides/dns/cloudflared/)
 
 ✅ Install servers in rack
 ☑️ Diagram network [Architecture](https://www.microsoft.com/en-us/microsoft-365/business-insights-ideas/resources/tips-for-mapping-your-network-diagram)

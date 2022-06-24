@@ -29,7 +29,7 @@ Proxmox 7.2
 ### Add High Availability (auto live migration of individual VMs in case of node failure)
 
 1. Start with VM in a shut down state.
-1. DataCenter > Add > Select VM to have HA > Fill in fields and selected 'Started' for state.
+1. DataCenter > HA > Add > Select VM to have HA > Fill in fields and selected 'Started' for state.
 1. VM should start when completed as specified. 
 
 ### Setup Ceph Cluster
