@@ -70,10 +70,11 @@ Allow Established/Related traffic from servers VLAN to any network
 1. Login to admin UI
 1. Settings > DNS > ✅ "Bind only to interface ethXYZ" to allow for mutlti-VLAN blocking.
 1. Set DNS server in Unifi controller to pihole IP
+1. On pihole: `nano /etc/resolv.conf`
+    1. Change to `nameserver <VM network gateway IP>`
+1. [Enable DNS-Over-HTTPS](https://docs.pi-hole.net/guides/dns/cloudflared/)
+    * _NOTE:_ To manually change DNS provider, you must change file `/etc/default/cloudflared`
 
-[DNS-Over-HTTPS](https://docs.pi-hole.net/guides/dns/cloudflared/)
 
-✅ Install servers in rack
-☑️ Diagram network [Architecture](https://www.microsoft.com/en-us/microsoft-365/business-insights-ideas/resources/tips-for-mapping-your-network-diagram)
-✅ Create networks in Unifi
-☑️ Create [Firewall rules](https://help.ui.com/hc/en-us/articles/115003173168-UniFi-UDM-USG-Introduction-to-Firewall-Rules#4) and [MGMT network](https://help.ui.com/hc/en-us/articles/115010254227-UniFi-USG-Firewall-How-to-Disable-InterVLAN-Routing#option%203)
+## References
+[Firewall rules](https://help.ui.com/hc/en-us/articles/115003173168-UniFi-UDM-USG-Introduction-to-Firewall-Rules#4)
