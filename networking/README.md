@@ -49,6 +49,12 @@ Allow Established/Related traffic from servers VLAN to any network
 
 [Techo Tim video](https://www.youtube.com/watch?v=liV3c9m_OX8&t=524s)
 
+### Internal DNS
+
+Pihole
+
+When using multiple VLANS, must set in the pi-hole web gui in Settings under Interface settings check box from "Allow only local requests to Bind only" to "Bind only to interface ethXYZ" hit save and the problem went away.
+
 ✅ Install servers in rack
 ☑️ Diagram network [Architecture](https://www.microsoft.com/en-us/microsoft-365/business-insights-ideas/resources/tips-for-mapping-your-network-diagram)
 ✅ Create networks in Unifi
