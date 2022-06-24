@@ -55,9 +55,9 @@ Allow Established/Related traffic from servers VLAN to any network
 1. Install Ubuntu 20.04 server with pihole name, install Openssh - 2 cores, 4GiB RAM, on VM network
 1. `apt update` and `apt upgrade -y`
 1. On pihole: `ssh-keygen` all defaults
-1. On Mac: `ssh-keygen` all defaults
-1. On Mac: `ssh-copy-id pihole@<piholeIP>` yes, password of pihole user on server.
-1. On Mac: `alias pihole="ssh 'pihole@<piholeIP>'"`
+1. On : `ssh-keygen` all defaults
+1. On : `ssh-copy-id pihole@<piholeIP>` yes, password of pihole user on server.
+1. On : `alias pihole="ssh 'pihole@<piholeIP>'"`
 1. Disable passworth auth on pihole
     1. `sudo nano /etc/ssh/sshd_config`
     1. Find `PasswordAuthentication yes`
