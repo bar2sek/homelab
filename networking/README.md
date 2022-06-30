@@ -58,7 +58,7 @@ Allow Established/Related traffic from servers VLAN to any network
 1. On : `ssh-keygen` all defaults
 1. On : `ssh-copy-id pihole@<piholeIP>` yes, password of pihole user on server.
 1. On : `alias pihole="ssh 'pihole@<piholeIP>'"`
-1. Disable passworth auth on pihole
+1. Disable password auth on pihole
     1. `sudo nano /etc/ssh/sshd_config`
     1. Find `PasswordAuthentication yes`
     1. Uncomment line and edit to `no`
