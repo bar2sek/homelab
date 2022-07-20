@@ -64,5 +64,13 @@ cloud-init: Specify custom files to replace the automatically generated ones at 
 
 # Option 2: k3s Kubernetes
 
-1. Can use [Rook](https://rook.io) to use current Ceph cluster.
-1. Spin up cloud-init Ubuntu nodes and install k3s on them with [Ansible](https://www.youtube.com/watch?v=CbkEWcUZ7zM&t=284s)
+## Overview
+1. Can use [Rook](https://rook.io) to use current Ceph cluster. Or [Longhorn](https://www.youtube.com/watch?v=eKBBHc0t7bc)?
+1. Spin up cloud-init Ubuntu nodes and install [k3s](https://k3s.io) on them with [Ansible](https://docs.ansible.com/?extIdCarryOver=true&sc_cid=701f2000001OH7YAAW)
+1. [kube-vip](https://kube-vip.io) external load balancer
+1. [MetalLB](https://metallb.universe.tf) service load balancer
+
+## Proxmox Quick [Instructions](https://www.youtube.com/watch?v=CbkEWcUZ7zM&t=284s):
+1. Create 5 VMs in Pxmx cluster with Ubuntu [cloud-init](https://www.youtube.com/watch?v=shiIi38cJe4)
+1. Config [Ansible](https://www.youtube.com/watch?v=w9eCU4bGgjQ) Playbook
+1. 
