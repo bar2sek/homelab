@@ -1,4 +1,4 @@
-# Talos Kubernetes
+# Option 1: Talos Kubernetes
 
 ## Setting up talos k8s on proxmox from talos.dev
 1. Create an external load balancer.
@@ -61,3 +61,8 @@ cloud-init: Specify custom files to replace the automatically generated ones at 
 ## Resources
 [talos on proxmox setup](https://www.talos.dev/v1.0/talos-guides/install/virtualized-platforms/proxmox/)
 [DevOps Toolkit](https://www.youtube.com/watch?v=iEFb2Zg4xUg&t=442s)
+
+# Option 2: k3s Kubernetes
+
+1. Can use [Rook](https://rook.io) to use current Ceph cluster.
+1. Spin up cloud-init Ubuntu nodes and install k3s on them with [Ansible](https://www.youtube.com/watch?v=CbkEWcUZ7zM&t=284s)
