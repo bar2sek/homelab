@@ -3,7 +3,7 @@
 ## Goal
 To learn the intricacies of building, operating, maintaining, and serving apps/services on an on-prem kubernetes infrastructure.
 
-### Platform Notes and Plans
+### Platform Notes and Ideas
 
 * [Sidero Metal](https://www.sidero.dev/) for server provisioning and lifecycle management using [Talos Linux](https://www.talos.dev/) for immutable and minimal kubernetes native OS on each node.
 
@@ -11,7 +11,8 @@ External dDNS, Reverse Proxy, Zero Trust Tunnel, and Registrar
 * [CloudFlare](https://dash.cloudflare.com/f)
 
 3 cluster nodes (SuperMicro machines)   
-* [Talos Linux](https://www.talos.dev/) clustered and operated by Sidero [Cluster API](https://cluster-api.sigs.k8s.io/)   
+* [Talos Linux](https://www.talos.dev/) clustered and operated by Sidero [Cluster API](https://cluster-api.sigs.k8s.io/)
+* [k3s](https://k3s.io) more established lightweight kubernetes. Cloud-init to setup Ubuntu nodes.
 * [Rook](https://www.talos.dev/v1.0/kubernetes-guides/configuration/ceph-with-rook/) for distributed software defined storage
     * [Harbor](https://goharbor.io/) image registry
     * [Vault](https://www.vaultproject.io/) secret store
