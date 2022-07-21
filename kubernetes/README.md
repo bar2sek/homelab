@@ -74,3 +74,6 @@ cloud-init: Specify custom files to replace the automatically generated ones at 
 1. Create 5 VMs in Pxmx cluster with Ubuntu [cloud-init](https://www.youtube.com/watch?v=shiIi38cJe4)
 1. Config [Ansible](https://www.youtube.com/watch?v=w9eCU4bGgjQ) Playbook
 1. 
+
+## Azure Arc integration with on-prem k3s cluster
+1. Use Terraform examples [here](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_k8s/rancher_k3s/azure_terraform/)
