@@ -21,7 +21,7 @@ It’s also a good idea to disable the root login and force all users to authent
 1. On server with user ryan `ssh-keygen` all defaults
 1. On : `ssh-keygen` all defaults
 1. On : `ssh-copy-id ryan@<serverIP>` yes, password of pihole user on server.
-1. On : `alias server="ssh 'ryan@<serverIP>'"`
+1. On : `alias <server name>="ssh 'ryan@<serverIP>'"`
 
 ## Disable password auth on server
 1. Change these two lines in the `/etc/ssh/sshd_config` file.
