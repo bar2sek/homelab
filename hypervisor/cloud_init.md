@@ -35,12 +35,12 @@ credit: [Techno Tim](https://www.youtube.com/watch?v=shiIi38cJe4), [his github](
     * change hardware as you need.
     * Any other additions for software etc, should be done with Ansible once the VM is created from this.
 1. Create template. There is no going back once this is a template. Finalize cloud-init settings first.
-    * `sudo qm template 9000`
+    * `sudo qm template 1000`
         * `Creating snap: 100% complete...done.`
 1. Clone template to a VM and add options.
-    * `sudo qm clone 9000 135 --name test --full`
+    * `sudo qm clone 1000 200 --name k3s-server01 --full`
 1. Start newly created VM
-    * `sudo qm start 135`
+    * `sudo qm start 200`
         * `generating cloud-init ISO`
 1. Login via local Mac (look at UniFi device list for IP it gave new VM)
     * `ssh -i .ssh/id_rsa ryan@10.10.50.xxx`
