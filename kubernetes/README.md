@@ -72,6 +72,7 @@ cloud-init: Specify custom files to replace the automatically generated ones at 
 
 ## Proxmox Quick [Instructions](https://www.youtube.com/watch?v=CbkEWcUZ7zM&t=284s):
 1. Create 5 VMs in Pxmx cluster with Ubuntu [cloud-init](https://www.youtube.com/watch?v=shiIi38cJe4)
+    * k3s-server01:`ssh -i .ssh/id_rsa ryan@10.10.50.244`
 1. Config [Ansible](https://www.youtube.com/watch?v=w9eCU4bGgjQ) Playbook
 1. 
 
