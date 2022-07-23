@@ -1,4 +1,8 @@
-# Manual cloud-init setup in Proxmox
+# Using Cloud-Init with an Ubuntu Cloud image in Proxmox
+
+## chmod +x and sudo run the ubuntu-init.sh script to do these steps until #9.
+
+## Manual cloud-init setup in Proxmox
 credit: [Techno Tim](https://www.youtube.com/watch?v=shiIi38cJe4), [his github](https://github.com/techno-tim/techno-tim.github.io/blob/8f97952ee1c511d543af05ec3a2a6f835790b7fe/_posts/2022-03-19-cloud-init-cloud-image.md), [docs](https://pve.proxmox.com/pve-docs/qm.1.html)
 
 1. Download Ubuntu cloud image to Proxmox CephFS > ISO Images on main pxmx node.

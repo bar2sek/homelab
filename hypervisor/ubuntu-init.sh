@@ -41,15 +41,12 @@ qm create ${ID} --memory ${MEMORY} --name ${VM_NAME} --net0 virtio,bridge=${NETW
 # hard coded directories and names to work with my proxmox setup
 qm importdisk ${ID} /mnt/pve/cephfs/template/iso/focal-server-cloudimg-amd64.img ceph_pool
 
-qm set ${ID} --scsihw virtio-scsi-pci --scsi0 ceph_pool:vm-${ID}-disk-0
+qm set ${ID} --scsihw virtio-scsi-pci --scsi0 ceph_pool:vm-${ID}-disk-0 \
+ --ide2 ceph_pool:cloudinit \
+ --boot c --bootdisk scsi0 \
+ --serial0 socket --vga serial0
 
-qm set ${ID} --ide2 ceph_pool:cloudinit
-
-qm set ${ID} --boot c --bootdisk scsi0
-
-qm set ${ID} --serial0 socket --vga serial0
-
-echo "Complete. Please add users and ssh keys as needed via the Proxmox GUI"
+echo "Complete."
 
 #FIN
 exit 0
