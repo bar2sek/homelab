@@ -46,7 +46,7 @@ qm set ${ID} --scsihw virtio-scsi-pci --scsi0 ceph_pool:vm-${ID}-disk-0 \
  --boot c --bootdisk scsi0 \
  --serial0 socket --vga serial0
 
-echo "Complete."
+echo "Complete. Please add users and ssh keys as needed via the Proxmox GUI."
 
 #FIN
 exit 0

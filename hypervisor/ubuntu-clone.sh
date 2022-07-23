@@ -29,4 +29,6 @@ qm clone ${ID} ${CLONE_ID} --name ${CLONE_NAME}
 qm set ${CLONE_ID} --sshkey ~/.ssh/id_rsa.pub \
  --ipconfig0 ip=dhcp # --ipconfig0 ip=10.0.10.123/24,gw=10.0.10.1
 
-# -- Future enhancement: create cloud-init VMs all in one shot using vendor files and cicustom parameter -- #
+# -- Future enhancement: create cloud-init VMs all in one shot using vendor files and cicustom parameter with Talos and such -- #
+
+# qm set 9000 --cicustom "user=<volume>,network=<volume>,meta=<volume>"
