@@ -30,9 +30,13 @@ credit: [Techno Tim](https://www.youtube.com/watch?v=shiIi38cJe4), [his github](
     ### DO NOT START THE VM
 1. Configure hardware and cloud init so it'll use those values when it boots for the first time, then create a template and clone. If you want to expand your hard drive you can on this base image before creating a template or after you clone a new machine. I prefer to expand the hard drive after I clone a new machine based on need.
 1. Create a user for the potential VM
-    * 
+    * add user ryan.
+    * copy in id_rsa.pub from local Mac to public key field.
+    * change hardware as you need.
+    * Any other additions for software etc, should be done with Ansible once the VM is created from this.
 1. Create template.
     * `sudo qm template 9000`
         * `Creating snap: 100% complete...done.`
 1. Clone template to a VM and add options.
     * `sudo qm clone 9000 135 --name test --full`
+1. Start newly created VM

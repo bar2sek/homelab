@@ -9,7 +9,7 @@ usage () {
     echo "Usage:"
     echo $0 "ID Memory Name network"
     echo "Example:"
-    echo $0 "8000 2048 ubuntu-init vm"
+    echo $0 "8000 2048 ubuntu-init vmbr3"
 }
 
 if [[ -z "$ID" ]]; then
@@ -31,7 +31,7 @@ if [[ -z "$VM_NAME" ]]; then
 fi
 
 if [[ -z "$NETWORK" ]]; then
-    echo "Please specify the UniFi network to use (vm)."
+    echo "Please specify the UniFi network to use (vmbr3)."
     usage
     exit 4
 fi
