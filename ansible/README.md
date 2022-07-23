@@ -15,4 +15,6 @@ Notes on setup and learing [here](https://www.youtube.com/watch?v=w9eCU4bGgjQ)
         "changed": false,
         "ping": "pong"
         }
-1. `ansible-playbook ./playbooks/apt.yml --user ryan -i ./inventory/hosts --ask-become-pass -i ./inventory/hosts`
+1. `ansible-playbook ./playbooks/apt.yml --user ryan --ask-become-pass -i ./inventory/hosts`
+1. Make sure all ryan users have the same password
+1. 
