@@ -41,5 +41,6 @@ credit: [Techno Tim](https://www.youtube.com/watch?v=shiIi38cJe4), [his github](
     * `sudo qm clone 9000 135 --name test --full`
 1. Start newly created VM
     * `sudo qm start 135`
+        * `generating cloud-init ISO`
 1. Login via local Mac (look at UniFi device list for IP it gave new VM)
-    * `ssh -i .ssh/id_rsa ryan@10.10.50.63`
+    * `ssh -i .ssh/id_rsa ryan@10.10.50.xxx`
